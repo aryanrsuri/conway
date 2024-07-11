@@ -2,7 +2,8 @@ const std = @import("std");
 const con = @import("conway.zig");
 
 pub fn main() !void {
-    const GEN = 255;
+    // Max to keep the GEN able to pass into []const u8
+    const GEN = 256;
     var cells: con.Cells = [_]u1{1} ** con.CELL_COUNT;
     con.randomise(&cells);
     var i: usize = 0;

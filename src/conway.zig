@@ -51,8 +51,7 @@ pub fn check(cells: *Cells, pos: usize) void {
     for (offsets) |offset| {
         const conv: isize = @intCast(pos);
         const norm: isize = conv + offset;
-        const posi: isize = @intCast(pos);
-        if (norm >= 0 and norm < cells.*.len and @abs(@mod(posi, @as(isize, sq)) - @mod(norm, @as(isize, sq))) <= 1) {
+        if (norm >= 0 and norm < cells.*.len) {
             count += get(cells, @intCast(norm));
         }
     }
